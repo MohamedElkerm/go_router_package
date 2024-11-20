@@ -10,6 +10,16 @@ class SiginInScreen extends StatelessWidget {
         title: const Text("Login Screen"),
         centerTitle: true,
       ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+
+          },
+          child: const Text(
+            "navigate to Home Screen",
+          ),
+        ),
+      ),
     );
   }
 }
