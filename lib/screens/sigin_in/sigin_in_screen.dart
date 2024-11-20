@@ -15,8 +15,8 @@ class SiginInScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            context.go(
-              AppRoutes.homeScreen,
+            context.goNamed(
+            "home",
             );
           },
           child: const Text(

@@ -16,9 +16,9 @@ class ProfileScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // context.go(
-            //   AppRoutes.profileDetailsNestedScreen,
-            // );
+            context.goNamed(
+              "profileDetails",
+            );
           },
           child: const Text(
             "navigate to Profile Details Screen",

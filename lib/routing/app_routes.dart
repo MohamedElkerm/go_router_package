@@ -1,5 +1,5 @@
 class AppRoutes {
-  AppRoutes._();
+  // AppRoutes._();
   static const String loginScreen = '/';
   static const String homeScreen = '/home';
   static const String profileScreen = '/profile';
