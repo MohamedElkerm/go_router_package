@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   }
 
   final GoRouter _router = GoRouter(
+    initialLocation: '/home',
     routes: [
       GoRoute(
         path: "/",
@@ -24,21 +25,18 @@ class MyApp extends StatelessWidget {
           return const SiginInScreen();
         },
       ),
-
       GoRoute(
         path: "/profile",
         builder: (context, state) {
           return const ProfileScreen();
         },
       ),
-
       GoRoute(
         path: "/home",
         builder: (context, state) {
           return const HomeScreen();
         },
       ),
-
       GoRoute(
         path: "/setting",
         builder: (context, state) {
