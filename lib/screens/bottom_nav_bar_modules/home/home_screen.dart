@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             context.goNamed(
-              "profile",
+              AppRoutesName.profileScreen,
             );
           },
           child: const Text(

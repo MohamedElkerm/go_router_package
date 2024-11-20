@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             context.goNamed(
-              "profileDetails",
+              AppRoutesName.profileDetailsScreen,
             );
           },
           child: const Text(

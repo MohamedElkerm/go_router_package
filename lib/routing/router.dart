@@ -11,28 +11,28 @@ final GoRouter router = GoRouter(
   // initialLocation: '/home',
   routes: [
     GoRoute(
-      name:"login" ,
+      name:AppRoutesName.loginScreen ,
       path: AppRoutes.loginScreen,
       builder: (context, state) {
         return const SiginInScreen();
       },
     ),
     GoRoute(
-      name: "home",
+      name: AppRoutesName.homeScreen,
       path: AppRoutes.homeScreen,
       builder: (context, state) {
         return const HomeScreen();
       },
       routes: [
         GoRoute(
-          name: "profile",
+          name: AppRoutesName.profileScreen,
           path: AppRoutes.profileScreen,
           builder: (context, state) {
             return const ProfileScreen();
           },
           routes: [
             GoRoute(
-              name: "profileDetails",
+              name: AppRoutesName.profileDetailsScreen,
               path: AppRoutes.profileDetailsScreen,
               builder: (context, state) {
                 return const ProfileDetailsScreen();
