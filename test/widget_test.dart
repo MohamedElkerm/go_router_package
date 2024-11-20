@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router_pack/app_start_point.dart';
 
 import 'package:go_router_pack/main.dart';
 
