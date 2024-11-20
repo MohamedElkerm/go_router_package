@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../routing/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,5 +13,18 @@ class HomeScreen extends StatelessWidget {
         title: Text("Home Screen"),
         centerTitle: true,
       ),
-    );  }
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // context.go(
+            //   AppRoutes.profileScreen,
+            // );
+          },
+          child: const Text(
+            "navigate to Profile Screen",
+          ),
+        ),
+      ),
+    );
+  }
 }

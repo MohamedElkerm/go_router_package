@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:go_router_pack/routing/app_routes.dart';
+import 'package:go_router_pack/screens/profile_details/profile_details_screen.dart';
 
 import '../screens/bottom_nav_bar_modules/home/home_screen.dart';
 import '../screens/bottom_nav_bar_modules/profile/profile_screen.dart';
@@ -16,22 +17,26 @@ final GoRouter router = GoRouter(
       },
     ),
     GoRoute(
-      path: AppRoutes.profileScreen,
-      builder: (context, state) {
-        return const ProfileScreen();
-      },
-    ),
-    GoRoute(
       path: AppRoutes.homeScreen,
       builder: (context, state) {
         return const HomeScreen();
       },
-    ),
-    GoRoute(
-      path: AppRoutes.settingScreen,
-      builder: (context, state) {
-        return const SettingScreen();
-      },
+      routes: [
+        GoRoute(
+          path: AppRoutes.profileScreen,
+          builder: (context, state) {
+            return const ProfileScreen();
+          },
+          routes: [
+            GoRoute(
+              path: AppRoutes.profileDetailsScreen,
+              builder: (context, state) {
+                return const ProfileDetailsScreen();
+              },
+            ),
+          ],
+        ),
+      ],
     ),
   ],
 );
