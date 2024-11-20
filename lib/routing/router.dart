@@ -13,34 +13,23 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _sectionNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
-  initialLocation: '/home',
+  initialLocation: AppRoutes.loginScreen,
 
   navigatorKey: _rootNavigatorKey,
 
   routes: [
-    // GoRoute(
-    //   name: AppRoutesName.loginScreen,
-    //   path: AppRoutes.loginScreen,
-    //   builder: (context , state){
-    //     return const SiginInScreen();
-    //   },
-    // ),
-    // GoRoute(
-    //   name: AppRoutesName.bottomNavBarScreen,
-    //   path: AppRoutes.bottomNavBarScreen,
-    //   builder: (context , state){
-    //     return const BottomNavBarScreen(navigationShell);
-    //   },
-    // ),
+    GoRoute(
+      name: AppRoutesName.loginScreen,
+      path: AppRoutes.loginScreen,
+      builder: (context , state){
+        return const SiginInScreen();
+      },
+    ),
     StatefulShellRoute.indexedStack(
-
       builder: (context, state, navigationShell) {
-        // Return the widget that implements the custom shell (e.g a BottomNavigationBar).
-        // The [StatefulNavigationShell] is passed to be able to navigate to other branches in a stateful way.
         return BottomNavBarScreen(navigationShell);
       },
       branches: [
-        // The route branch for the 1º Tab
         StatefulShellBranch(
           navigatorKey: _sectionNavigatorKey,
           routes: <RouteBase>[
@@ -48,22 +37,14 @@ final GoRouter router = GoRouter(
               name: AppRoutesName.homeScreen,
               path: AppRoutes.homeScreen,
               builder: (context, state) => const HomeScreen(),
-              // routes: <RouteBase>[
-              //   GoRoute(
-              //     path: 'detail',
-              //     builder: (context, state) => const FeedDetailsPage(),
-              //   )
-              // ],
             ),
           ],
         ),
 
-        // The route branch for 2º Tab
         StatefulShellBranch(
           routes: <RouteBase>[
             GoRoute(
               name: AppRoutesName.profileScreen,
-
               path: AppRoutes.profileScreen,
               builder: (context, state) => const ProfileScreen(),
               routes: <RouteBase>[
@@ -96,52 +77,5 @@ final GoRouter router = GoRouter(
         ),
       ],
     ),
-    // GoRoute(
-    //   name: AppRoutesName.loginScreen,
-    //   path: AppRoutes.loginScreen,
-    //   builder: (context, state) {
-    //     return const SiginInScreen();
-    //   },
-    // ),
-    // GoRoute(
-    //   name: AppRoutesName.bottomNavBarScreen,
-    //   path: AppRoutes.bottomNavBarScreen,
-    //   builder: (context, state) {
-    //     return const BottomNavBarScreen();
-    //   },
-    //   routes: [
-    //     GoRoute(
-    //       name: AppRoutesName.profileDetailsScreen,
-    //       path: AppRoutes.profileDetailsScreen,
-    //       builder: (context, state) {
-    //         return const ProfileDetailsScreen();
-    //       },
-    //     ),
-    //   ],
-    // ),
-
-    // GoRoute(
-    //     name: AppRoutesName.homeScreen,
-    //     path: AppRoutes.homeScreen,
-    //     builder: (context, state) {
-    //       return const HomeScreen();
-    //     },
-    //     routes: [
-    //       GoRoute(
-    //           name: AppRoutesName.profileScreen,
-    //           path: AppRoutes.profileScreen,
-    //           builder: (context, state) {
-    //             return const ProfileScreen();
-    //           },
-    //           routes: [
-    //             GoRoute(
-    //               name: AppRoutesName.profileDetailsScreen,
-    //               path: AppRoutes.profileDetailsScreen,
-    //               builder: (context, state) {
-    //                 return const ProfileDetailsScreen();
-    //               },
-    //             ),
-    //           ]),
-    //     ]),
   ],
 );
