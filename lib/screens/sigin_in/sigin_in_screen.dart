@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:go_router_pack/routing/app_routes.dart';
 
 class SiginInScreen extends StatelessWidget {
   const SiginInScreen({super.key});
@@ -13,7 +15,9 @@ class SiginInScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-
+            context.go(
+              AppRoutes.homeScreen,
+            );
           },
           child: const Text(
             "navigate to Home Screen",
