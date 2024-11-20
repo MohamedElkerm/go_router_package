@@ -20,10 +20,11 @@ class ProfileScreen extends StatelessWidget {
               AppRoutesName.profileDetailsScreen,
             );
           },
-          child: const Text(
-            "navigate to Profile Details Screen",
+          child: Text(
+            "navigate to the profile details",
           ),
         ),
       ),
-    );  }
+    );
+  }
 }

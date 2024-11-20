@@ -20,7 +20,7 @@ class SiginInScreen extends StatelessWidget {
             );
           },
           child: const Text(
-            "navigate to Home Screen",
+            "navigate to BottomNavigationBar Screen",
           ),
         ),
       ),

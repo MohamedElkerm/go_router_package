@@ -13,18 +13,6 @@ class HomeScreen extends StatelessWidget {
         title: Text("Home Screen"),
         centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            context.goNamed(
-              AppRoutesName.profileScreen,
-            );
-          },
-          child: const Text(
-            "navigate to Profile Screen",
-          ),
-        ),
-      ),
     );
   }
 }
