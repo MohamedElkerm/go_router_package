@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:go_router_pack/routing/app_routes.dart';
+import 'package:go_router_pack/routing/my_router_observer.dart';
 import 'package:go_router_pack/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
 import 'package:go_router_pack/screens/profile_details/profile_details_screen.dart';
 
@@ -13,15 +14,16 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _sectionNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
+  observers: [
+    MyRouterObserver(),
+  ],
   initialLocation: AppRoutes.loginScreen,
-
   navigatorKey: _rootNavigatorKey,
-
   routes: [
     GoRoute(
       name: AppRoutesName.loginScreen,
       path: AppRoutes.loginScreen,
-      builder: (context , state){
+      builder: (context, state) {
         return const SiginInScreen();
       },
     ),
@@ -63,15 +65,8 @@ final GoRouter router = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               name: AppRoutesName.settingScreen,
-
               path: AppRoutes.settingScreen,
               builder: (context, state) => const SettingScreen(),
-              // routes: <RouteBase>[
-              //   GoRoute(
-              //     path: 'detail',
-              //     builder: (context, state) => const FeedDetailsPage(),
-              //   )
-              // ],
             ),
           ],
         ),
